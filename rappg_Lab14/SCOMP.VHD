@@ -6,9 +6,9 @@ USE altera_mf.altera_mf_components.all;
 
 ENTITY SCOMP IS
   PORT(	
-    clock, reset 				: IN STD_LOGIC;
-    program_counter_out 		: OUT STD_LOGIC_VECTOR( 7 DOWNTO 0 );
-    register_AC_out 			: OUT STD_LOGIC_VECTOR(15 DOWNTO 0 );
+    		clock, reset 		: IN STD_LOGIC;
+    		program_counter_out 	: OUT STD_LOGIC_VECTOR( 7 DOWNTO 0 );
+    		register_AC_out 	: OUT STD_LOGIC_VECTOR(15 DOWNTO 0 );
 		memory_data_bus_out	: OUT STD_LOGIC_VECTOR(15 DOWNTO 0 );
 		memory_address_bus_out	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0 )
 	);
@@ -53,10 +53,10 @@ ARCHITECTURE arch OF SCOMP IS
         ac_reg <= (others => '0');
         ir_reg <= (others => '0');
       ELSIF clock'EVENT AND clock = '1' THEN
-		    state_reg <= state_next;
-		    ir_reg <= ir_next;
-		    ac_reg <= ac_next;
-		    pc_reg <= pc_next;
+	state_reg <= state_next;
+	ir_reg <= ir_next;
+	ac_reg <= ac_next;
+	pc_reg <= pc_next;
       END IF;
     END PROCESS;
   
