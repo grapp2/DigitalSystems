@@ -9,8 +9,8 @@ entity DualDFF7474 is
 end DualDFF7474;
 architecture arch of DualDFF7474 is
 begin
-	dualDFF1: work.dualDFF(arch)
+	dualDFF1: work.dff(arch)
 		port map(i_pr => i_pr(0), i_clk => i_clk(0), i_clr => i_clr(0), i_d => i_d(0), o_q => o_q(0), o_qbar => o_qbar(0));
-	dualDFF2: work.dualDFF(arch)
+	dualDFF2: work.dff(arch)
 		port map(i_pr => i_pr(1), i_clk => i_clk(1), i_clr => i_clr(1), i_d => i_d(1), o_q => o_q(1), o_qbar => o_qbar(1));
 end arch;
