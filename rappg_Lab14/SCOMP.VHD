@@ -132,6 +132,4 @@ BEGIN
     		    		state_next       	<= fetch;
 		  	END CASE;
 	 	END PROCESS;
--- memory address register is stored inside synchronous memory unit 
--- need to send it's outputs based on current state
 END arch;
