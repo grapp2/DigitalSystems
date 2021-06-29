@@ -23,8 +23,8 @@
     output: o_y   - std_logic
   #### NAdder
   Mapping an adder component to add two vectors together
-`    input:  i_a3, i_b3   - std_logic_vector (2 downto 0)
+``    input:  i_a3, i_b3   - std_logic_vector (2 downto 0)
      output: o_tot        - std_logic_vector (3 downto 0) (total sum)
              o_sum        - std_logic_vector (3 downto 0) (sum w/o carry)
-             o_c          - std_logic (carry)`
+             o_c          - std_logic (carry)``
    
