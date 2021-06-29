@@ -13,9 +13,9 @@ architecture arch of WithSelect2Bit is
 		in_bits <= i_a & i_b;
 		with in_bits select
 			out_bits <=	"001" when "0000"|"0101"|"1010"|"1111",
-							"010" when "0001"|"0010"|"0011"|"0110"|"0111"|"1011",
-							"100" when "0100"|"1000"|"1100"|"1101"|"1110"|"1001",
-							"000" when others;
+					"010" when "0001"|"0010"|"0011"|"0110"|"0111"|"1011",
+					"100" when "0100"|"1000"|"1100"|"1101"|"1110"|"1001",
+					"000" when others;
 			o_eq <= out_bits(0);
 			o_lt <= out_bits(1);
 			o_gt <= out_bits(2);
