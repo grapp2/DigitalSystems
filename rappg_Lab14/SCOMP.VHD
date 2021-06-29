@@ -21,10 +21,10 @@ END SCOMP;
 ARCHITECTURE arch OF SCOMP IS
 	TYPE STATE_TYPE IS ( reset_pc, fetch, decode, execute_add, execute_load, execute_store, 
 		      execute_store2, execute_jump ); -- Define all states in type variable
-  	SIGNAL state_reg, state_next: STATE_TYPE;
-  	SIGNAL memory_data_bus			: std_logic_vector(15 downto 0);
+  	SIGNAL state_reg, state_next			: STATE_TYPE;
+  	SIGNAL memory_data_bus				: std_logic_vector(15 downto 0);
   	SIGNAL ir_reg, ir_next  			: unsigned(15 DOWNTO 0 ); -- instruction register, memory data line
-  	SIGNAL ac_reg, ac_next 			: unsigned(15 DOWNTO 0 ); --accumulator register
+  	SIGNAL ac_reg, ac_next 				: unsigned(15 DOWNTO 0 ); --accumulator register
   	SIGNAL pc_reg, pc_next, memory_address_bus 	: unsigned( 7 DOWNTO 0 ); --program counter register, memory address line
   	SIGNAL memory_write 				: STD_LOGIC;
 BEGIN
