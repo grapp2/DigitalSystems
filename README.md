@@ -21,5 +21,10 @@
             i_d   - std_logic_vector (7 downto 0) (data line)
             i_e   - std_logic (enable)
     output: o_y   - std_logic
-  #### 8 input multiplexer
-    input:
+  #### NAdder
+  Mapping an adder component to add two vectors together
+`    input:  i_a3, i_b3   - std_logic_vector (2 downto 0)
+     output: o_tot        - std_logic_vector (3 downto 0) (total sum)
+             o_sum        - std_logic_vector (3 downto 0) (sum w/o carry)
+             o_c          - std_logic (carry)`
+   
