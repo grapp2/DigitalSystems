@@ -3,9 +3,9 @@ USE ieee.std_logic_1164.all;
  
 ENTITY and_gate IS
   PORT (
-    input_1    : IN  std_logic;
-    input_2    : IN  std_logic;
-    and_result : OUT std_logic
+    i_a    : IN  std_logic;
+    i_b    : IN  std_logic;
+    o_res : OUT std_logic
     );
 END and_gate;
  
