@@ -136,3 +136,23 @@ input:  i_clk, i_res, i_clr, i_en, i_up, i_ld         std_logic
 output: o_q                                           std_logic_vector(N-1 downto 0)
 signal: r_reg, r_next                                 unsigned(N-1 downto 0)
 ```
+#### counter_tb.vhd
+Maps a gen_counter and tests functions of the counter (loading data, async reset, counting).
+```
+signal:  clk, reset: std_logic;
+         syn_clr, load, en, up: std_logic;
+         d: std_logic_vector (N-1 downto 0);
+         max_tick, min_tick: std_logic;
+         q: std_logic_vector(N-1 downto 0);
+```
+
+### rappg_Lab9
+#### mod10.vhd
+mod 10 counter
+```
+input:  i_clk, i_clr, i_en, i_ld: in std_logic
+        i_d: in            std_logic_vector(3 downto 0)
+output: o_rco: out         std_logic
+        o_q: out           std_logic_vector(3 downto 0)
+signal: r_reg, r_next      unsigned(3 downto 0)
+```
