@@ -78,9 +78,61 @@ output: o_cout       - std_logic                       (carry)
         o_sum        - std_logic_vector (N-1 downto 0) (sum without carry)
 ```
 ### rappg_Lab6
-#### ShiftRegister.vhd
-Generic map to shift register component
-
+#### jkFF0.vhd
+```
+input:  i_j, i_k, i_clk, i_pr, i_clr         std_logic
+output: o_q, o_qbar                          std_logic
+```
+#### NandLatch.vhd
+```
+input:  i_s,i_r            std_logic
+output: o_q, o_qbar        std_logic
+```
+#### dff.vhd
+```
+input:  i_d, i_clk, i_pr, i_clr     std_logic
+output: o_q,o_qbar                  std_logic
+```
+#### DualDFF7474.vhd
+Maps two d flip flops together
+```
+input:  i_pr,i_clk,i_clr,i_d: in std_logic_vector (1 downto 0);
+output: o_q, o_qbar: out std_logic_vector (1 downto 0)
+```
+#### QuadDFF.vhd
+Maps four d flip flops together with an enable changes input.
+```
+i_d               std_logic_vector(3 downto 0)
+i_e               std_logic_vector(1 downto 0) (enables q manipulation)
+o_q, o_qbar       std_logic_vector(3 downto 0)
 ```
 
+### rappg_Lab7
+#### ShiftRegister.vhd
+Map to generic shift register entity
+```
+input:  i_clk, i_res       std_logic
+        i_ctrl             std_logic_vector (1 downto 0)
+        i_d                std_logic_vector (3 downto 0)
+output: o_q                std_logic_vector(3 downto 0)
+```
+#### gen_shift_register.vhd
+Generic shift register entity, shifts bits up or down with control line and has an asynchronous reset.
+```
+input:  i_clk, i_res       std_logic
+        i_ctrl             std_logic_vector (1 downto 0)
+        i_d                std_logic_vector (N-1 downto 0)
+output: o_q                std_logic_vector(N-1 downto 0)
+signal: r_reg, r_next      std_logic_vector(N-1 downto 0)
+```
 
+### rappg_Lab8
+#### gen_counter.vhd
+Synchronous counter with asynchronous reset, can count up and down or load data from input.
+```
+input:  i_clk, i_res, i_clr, i_en, i_up, i_ld         std_logic
+        i_d                                           std_logic_vector(N-1 downto 0)
+        o_max_tick,o_min_tick                         std_logic
+output: o_q                                           std_logic_vector(N-1 downto 0)
+signal: r_reg, r_next                                 unsigned(N-1 downto 0)
+```
